@@ -3634,6 +3634,21 @@ input, select, textarea {
 					#banner > .inner header > :first-child:after {
 						max-width: 100%;
 					}
+			#banner .banner-text h1 {
+			margin: 0;
+			font-size: 3.2em;
+			font-weight: 600;
+			}
+
+			#banner .banner-subtitle {
+			margin-top: 0.3em;
+			font-size: 1.1em;
+			font-weight: 400;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			opacity: 0.85;
+			}
+
 
 			#banner > .inner .content {
 				display: -moz-flex;
@@ -3768,6 +3783,28 @@ input, select, textarea {
 				}
 
 		}
+
+		#banner .scroll-indicator {
+			position: absolute;
+			bottom: 2em;
+			left: 50%;
+			width: 22px;
+			height: 22px;
+			margin-left: -11px;
+			border-left: 2px solid white;
+			border-bottom: 2px solid white;
+			transform: rotate(-45deg);
+			opacity: 0.8;
+			animation: scrollPulse 2s infinite;
+			z-index: 3;
+			}
+
+			@keyframes scrollPulse {
+			0% { transform: translateY(0) rotate(-45deg); }
+			50% { transform: translateY(10px) rotate(-45deg); }
+			100% { transform: translateY(0) rotate(-45deg); }
+			}
+
 
 /* Main */
 
@@ -4116,3 +4153,5 @@ input, select, textarea {
 			opacity: 1;
 			visibility: visible;
 		}
+
+
