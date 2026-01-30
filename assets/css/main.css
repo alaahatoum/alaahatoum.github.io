@@ -70,97 +70,105 @@ ol, ul {
     position: relative;
     width: 100%;
     background-image: url("../../images/echo_hand_bg.jpg");
-    background-repeat: repeat-y;        /* repeat down the page */
+    background-repeat: repeat-y;        /* repeat down the page if needed */
     background-size: 100% auto;         /* span full page width */
     background-position: top center;
+    background-attachment: fixed;       /* FIXED background */
 }
 
-/* Darker (but still subtle) overlay */
+/* Darker overlay for readability */
 #echo-hand::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.8);    /* less transparent */
+    background: rgba(0, 0, 0, 0.8);    /* adjust darkness as needed */
     z-index: 0;
 }
 
-/* Ensure content stays readable */
+/* Ensure content sits above the overlay */
 #echo-hand .inner {
     position: relative;
     z-index: 1;
 }
 
+
 #daedalus {
     position: relative;
     width: 100%;
     background-image: url("../../images/ded-bg.jpg");
-    background-repeat: repeat-y;        /* repeat down the page */
+    background-repeat: repeat-y;        /* repeat down the page if needed */
     background-size: 100% auto;         /* span full page width */
     background-position: top center;
+    background-attachment: fixed;       /* FIXED background */
 }
 
-/* Darker (but still subtle) overlay */
+/* Darker overlay for readability */
 #daedalus::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.8);    /* less transparent */
+    background: rgba(0, 0, 0, 0.8);    /* adjust darkness as needed */
     z-index: 0;
 }
 
-/* Ensure content stays readable */
+/* Ensure content sits above the overlay */
 #daedalus .inner {
     position: relative;
     z-index: 1;
 }
+
 #wavegen {
     position: relative;
     width: 100%;
     background-image: url("../../images/wavegenbg.png");
-    background-repeat: repeat-y;        /* repeat down the page */
-    background-size: 100% auto;         /* span full page width */
+    background-repeat: repeat-y;        /* repeat down the page if needed */
+    background-size: 100% auto;         /* span full width */
     background-position: top center;
+    background-attachment: fixed;       /* FIXED background */
 }
 
-/* Darker (but still subtle) overlay */
+/* Darker overlay for readability */
 #wavegen::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.8);    /* less transparent */
+    background: rgba(0, 0, 0, 0.5);    /* adjust darkness */
     z-index: 0;
 }
 
-/* Ensure content stays readable */
+/* Ensure content sits above the overlay */
 #wavegen .inner {
     position: relative;
     z-index: 1;
 }
 
 
+
 #eeg-headset {
     position: relative;
     width: 100%;
     background-image: url("../../images/eegbg.webp");
-    background-repeat: repeat-y;        /* repeat down the page */
+    background-repeat: repeat-y;        /* repeat down the page if needed */
     background-size: 100% auto;         /* span full page width */
     background-position: top center;
+    background-attachment: fixed;       /* FIXED background */
 }
 
-/* Darker (but still subtle) overlay */
+/* Darker overlay for readability */
 #eeg-headset::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.8);    /* less transparent */
+    background: rgba(0, 0, 0, 0.8);    /* adjust darkness as needed */
     z-index: 0;
 }
 
-/* Ensure content stays readable */
+/* Ensure content sits above the overlay */
 #eeg-headset .inner {
     position: relative;
     z-index: 1;
 }
+
 
 
 
@@ -1941,7 +1949,7 @@ input, select, textarea {
 
 			header.major > :first-child:after {
 				content: '';
-				background-color: #ffffff;
+				background-color: transparent;
 				display: block;
 				height: 2px;
 				margin: 0.325em 0 0.5em 0;

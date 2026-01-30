@@ -18,7 +18,10 @@
 
 				<!-- Main -->
 					<div id="main" class="alt">
-
+				<!-- Header -->
+					<header id="header" class="alt">
+						<a href="index.html" class="logo"><strong>Engineering Portfolio</strong> </a>
+					</header>
 						<!-- One -->
 						<section id="echo-hand" class="project-section">
 							<div class="inner">
@@ -39,31 +42,49 @@
 
 								<!-- Project Story / Description -->
 								<div class="project-description">
-									<p>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+
+									<h3>Objective</h3>
 									<p>
-										The Echo-Hand project began as an opportunity to explore robotics across all layers: mechanical design, hardware integration, and software control. Our team was particularly inspired by the potential applications of dextrous robotics for surgical procedures and remote operations, enabling doctors to reach and assist more patients across distances. 
+										The Echo-Hand project aimed to design and implement a dexterous robotic hand capable of mirroring human hand gestures in real time. 
+										The project spanned the full robotics stack, including mechanical design, embedded control, and perception, with applications in 
+										surgical robotics and remote operation systems.
+									</p>
+
+									<h3>Process</h3>
+									<p>
+										An existing 3D-printable robotic hand design was fabricated, with iterations on print orientation, material selection, and joint tolerances 
+										to ensure reliable motion and structural integrity. SolidWorks and rapid prototyping techniques were used to refine servo mounts and linkages, 
+										improving alignment and reducing backlash.
 									</p>
 									<p>
-										I started by fabricating an existing 3D-printable robotic hand design, carefully iterating on print orientations and material choices to reduce warping and optimize joint tolerances. I integrated the hand with a custom motor control and sensor suite, which allowed real-time gesture mirroring based on user hand movements. To make this possible, I built an OpenCV-based gesture recognition system on a Raspberry Pi to process live camera input and interpret hand motions, while an Arduino Uno ran a PID-based control system to actuate the servo motors precisely.
+										Control and perception were implemented across two platforms. A Raspberry Pi handled real-time gesture recognition using an OpenCV-based 
+										computer vision pipeline to process live camera input and extract hand motion data. An Arduino Uno implemented a PID-based control system 
+										in C++ to actuate servo motors precisely, translating detected gestures into smooth and responsive hand movements.
 									</p>
+
+									<h3>Challenges</h3>
 									<p>
-										Along the way, I resolved mechanical misalignment issues by redesigning servo mounts and linkages, and troubleshot friction and binding by adjusting joint clearances and testing different lubricants. Throughout the project, I collaborated closely with software, biomedical, and mechanical engineers to ensure the hand's motion was smooth, accurate, and reliable. This experience gave me hands-on insight into the full robotics development lifecycle and demonstrated how integrated design across disciplines is essential for creating functional, dextrous robotic systems.
+										Mechanical challenges included misalignment, joint friction, and inconsistent finger motion, which were addressed through iterative redesign, 
+										clearance adjustment, and careful servo calibration. On the software side, stabilizing gesture recognition under variable lighting conditions 
+										required optimization of OpenCV thresholds and refinement of tracking logic to reduce latency and computational load. Managing hardware sampling 
+										rates alongside software performance was critical to maintain real-time responsiveness.
 									</p>
-									<p>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+
+									<h3>Results</h3>
+									<p>
+										The completed system successfully demonstrated real-time gesture mirroring with smooth, coordinated finger motion. The project highlighted 
+										the importance of integrating mechanical design, embedded control, and computer vision algorithms. It reinforced best practices in rapid 
+										prototyping, sensor integration, PID-based motion control, OpenCV programming, and cross-disciplinary collaboration for reliable robotic systems.
+									</p>
 
 								</div>
+
+
 								<!-- GitHub link -->
 								<div class="project-links">
 									<a href="https://github.com/alaa-hatoum/Gesture_Recognition" target="_blank" class="button primary">View GitHub</a>
 								</div>
-								<div class="skills-section" style="margin:2em 0;">
-									<h3>Skills Breakdown</h3>
-									<p>
-										Mechanical Design & 3D Printing (SolidWorks & Rapid Prototyping), Hardware Integration, Embedded Systems Programming (Arduino, Raspberry Pi, C++), 
-										Servo Motor Control & PID, Computer Vision with OpenCV (Python), Sensor Integration, Motion Control Algorithms, 
-										Debugging & Troubleshooting, Multidisciplinary Collaboration
-									</p>
-								</div>
+
 								<!-- Images -->
 								<div class="image-row">
 									<img src="images/echo_hand.png" alt="Project Image 1">
