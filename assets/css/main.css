@@ -4419,9 +4419,29 @@ html, body {
     word-wrap: break-word;  /* prevents long words from overflowing */
 }
 
+/* Header: image + name */
+#banner .banner-header {
+    display: flex;
+    flex-wrap: wrap; /* stack on small screens */
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+
+/* Text next to image */
+#banner .banner-text {
+    flex: 1 1 auto; /* allows text to shrink */
+    min-width: 220px;
+    max-width: 600px;
+    text-align: center;
+}
+
 
 /* Mobile adjustments */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 380px) {
     #banner .banner-header {
         flex-direction: column;
         gap: 1em;
