@@ -20,135 +20,80 @@
 					<header id="header" class="alt">
 						<a href="index.html" class="logo"><strong>Engineering Portfolio</strong> </a>
 					</header>
-						<!-- Two -->
-							<section id="two" class="spotlights">
-							<section>
-								<a href="" class="image full-height">
-									<img src="images/slam.png" alt="TurtleBot Maze Project" />
-								</a>
-								<div class="content">
-									<div class="inner">
-										<header class="major">
-											<h3>TurtleBot Maze Challenge</h3>
-										</header>
-										<p>
-											This project focused on three challenging tasks using a TurtleBot: 
-											<ol>
-												<li>Autonomous navigation through a 4.87 m x 4.87 m maze while mapping all static objects within 8 minutes.</li>
-												<li>Navigate to 5 different locations and correctly identify images using the RGB camera, comparing them to reference templates.</li>
-												<li>Implement object following and stimulus-response behaviors; for example, if the robot cannot locate the user, it reacts with sound and visual feedback to simulate an emotional response.</li>
-											</ol>
-											This experience allowed us to explore ROS navigation, perception, and basic robot-human interaction.
-										</p>
+				<!-- Main -->
+				<div id="main">
 
-										<!-- Skills -->
-										<h4>Skills Used</h4>
-										<p>
-											Robot Operating System (ROS), C++, Robotics, Gazebo, Rviz, Deep Learning, Git, Programming
-										</p>
+				<!-- Banner Project 1 -->
+				<section class="project-banner" style="background-image: url('images/slam.png');">
+					<div class="banner-inner">
+					<h2>TurtleBot Maze Challenge</h2>
+					<p>
+						This project focused on three challenging tasks using a TurtleBot:
+						<ol>
+						<li>Autonomous navigation through a 4.87 m x 4.87 m maze while mapping all static objects within 8 minutes.</li>
+						<li>Navigate to 5 different locations and correctly identify images using the RGB camera, comparing them to reference templates.</li>
+						<li>Implement object following and stimulus-response behaviors with visual and sound feedback.</li>
+						</ol>
+					</p>
+					<h4>Skills Used:</h4>
+					<p>ROS, C++, Gazebo, Rviz, Deep Learning, Robot-Human Interaction, Git</p>
+					<a href="https://github.com/CTong7/MIE443-TurtleBot" class="button primary" target="_blank">View GitHub Repository</a>
+					</div>
+				</section>
 
-										<!-- GitHub link -->
-										<ul class="actions">
-											<li>
-												<a href="https://github.com/CTong7/MIE443-TurtleBot" class="button primary" target="_blank">
-													View GitHub Repository
-												</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</section>
+				<!-- Banner Project 2 -->
+				<section class="project-banner" style="background-image: url('images/pallet_ground_preview.png');">
+					<div class="banner-inner">
+					<h2>Pallet Detection & Ground Segmentation (ROS 2)</h2>
+					<p>
+						Real-time pallet detection and ground segmentation using ROS 2 and deep learning, optimized for NVIDIA Jetson AGX Orin. The system detects Euro and GMA pallets, identifies traversable ground, and supports autonomous navigation in dynamic warehouses.
+					</p>
+					<h4>Skills Used:</h4>
+					<p>ROS 2, Python, YOLOv8, Semantic Segmentation, Edge AI Deployment, Testing & Validation, System Reliability</p>
+					<a href="https://github.com/alaahatoum/pallet-detection-ground-segmentation-ros2" class="button primary" target="_blank">View GitHub Repository</a>
+					</div>
+				</section>
 
-							<section>
-								<a href="#" class="image full-height">
-									<img src="images/pallet_ground_preview.png" alt="Pallet Detection & Ground Segmentation" data-position="center center" />
-								</a>
-								<div class="content">
-									<div class="inner">
-										<header class="major">
-											<h3>Pallet Detection & Ground Segmentation (ROS 2)</h3>
-										</header>
-										<p>
-											This project implements a real-time pallet detection and ground segmentation system using ROS 2 and deep learning, optimized for edge deployment on NVIDIA Jetson AGX Orin. It allows autonomous robots to detect Euro and GMA pallets, identify traversable ground, and navigate safely in dynamic warehouse and manufacturing environments.
-										</p>
-										<p>
-											Key challenges included integrating YOLOv8 for pallet detection and a semantic segmentation model for ground identification, building a ROS 2 node that publishes annotated camera images in real-time.
-										</p>
-										<p>
-											I developed testing scripts for static images and live feeds, iterated on model accuracy, and ensured system reliability for edge AI deployment. The modular package structure supports future retraining and integration into autonomous navigation systems.
-										</p>
-										<h4>Skills Used</h4>
-										<p>
-											ROS 2 (Humble), Python, YOLOv8, Semantic Segmentation, Edge AI Deployment, Deep Learning, Git, Real-Time Systems, Robotics Software Architecture, Testing & Validation
-										</p>
-										<ul class="actions">
-											<li>
-												<a href="https://github.com/alaahatoum/pallet-detection-ground-segmentation-ros2" class="button primary" target="_blank">
-													View GitHub Repository
-												</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</section>
+				<!-- Banner Project 3 -->
+				<section class="project-banner" style="background-image: url('images/traffic_signs.png');">
+					<div class="banner-inner">
+					<h2>German Traffic Sign Classification CNN</h2>
+					<p>
+						Built a CNN in PyTorch to classify German traffic signs with high accuracy. Workflow included data preprocessing, augmentation, model training, and evaluation under varying lighting and occlusion conditions.
+					</p>
+					<h4>Skills Used:</h4>
+					<p>Python, PyTorch, CNNs, Deep Learning, Data Augmentation, Image Processing, Model Training & Evaluation</p>
+					<a href="https://www.youtube.com/watch?v=HsywpNokSyU" class="button primary" target="_blank">Watch Project Video</a>
+					</div>
+				</section>
 
-								<section>
-								<a href="#" class="image full-height">
-										<img src="images/traffic_signs.png" alt="German Traffic Sign CNN" data-position="center center" />
-									</a>
-									<div class="content">
-										<div class="inner">
-											<header class="major">
-												<h3>German Traffic Sign Classification CNN</h3>
-											</header>
-											<p>
-												Built a convolutional neural network (CNN) in PyTorch to classify German traffic signs with high accuracy. The workflow included data preprocessing, augmentation, model training on Google Colab, and evaluation using metrics like accuracy and confusion matrices. The network was designed to handle variations in lighting, angles, and partial occlusions, providing reliable predictions for real-world scenarios.
-											</p>
-											<p>
-												This project gave hands-on experience in deep learning, computer vision, and practical model deployment, highlighting the importance of data quality and preprocessing in achieving strong performance.
-											</p>
-											<h4>Skills Used</h4>
-											<p>
-												Python, PyTorch, CNNs, Deep Learning, Data Augmentation, Model Training & Evaluation, Image Processing, Google Colab, Computer Vision
-											</p>
-											<ul class="actions">
-												<li>
-													<a href="https://www.youtube.com/watch?v=HsywpNokSyU" class="button primary" target="_blank">
-														Watch Project Video
-													</a>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</section>
-							</section>
+				</div>
 
 
+				<section id="three" class="footer-cta">
+					<div class="inner">
+						<header class="major">
+							<h2>Let’s Build Something Meaningful</h2>
+						</header>
 
-<section id="two" class="footer-cta">
-	<div class="inner">
-		<header class="major">
-			<h2>Let’s Build Something Meaningful</h2>
-		</header>
+						<p>
+							These projects reflect my interest in building complete systems, from mechanical design and electronics
+							to control, sensing, and software integration. I’m especially motivated by work in
+							<strong>robotics, mechatronics, and mechanical engineering</strong>, where thoughtful engineering can have
+							real-world impact.
+						</p>
 
-		<p>
-			These projects reflect my interest in building complete systems, from mechanical design and electronics
-			to control, sensing, and software integration. I’m especially motivated by work in
-			<strong>robotics, mechatronics, and mechanical engineering</strong>, where thoughtful engineering can have
-			real-world impact.
-		</p>
+						<p>
+							I invite you to explore the projects throughout this site, and if you’re interested in collaborating,
+							discussing a role, or learning more about my work, I’d love to connect.
+						</p>
 
-		<p>
-			I invite you to explore the projects throughout this site, and if you’re interested in collaborating,
-			discussing a role, or learning more about my work, I’d love to connect.
-		</p>
-
-		<div style="text-align: center; margin-top: 1em;">
-			<a href="assets/Alaa_Hatoum___Resume.pdf" class="button primary" target="_blank">
-				View Resume
-			</a>
-		</div>
-</section>
+						<div style="text-align: center; margin-top: 1em;">
+							<a href="assets/Alaa_Hatoum___Resume.pdf" class="button primary" target="_blank">
+								View Resume
+							</a>
+						</div>
+				</section>
 
 
 <!-- Contact -->
