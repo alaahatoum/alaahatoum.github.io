@@ -4410,7 +4410,7 @@ html, body {
     max-width: 1600px;       /* limits text width on large screens */
     margin: 0 auto;         /* center horizontally */
     padding: 0 2em;         /* horizontal padding for small screens */
-    box-sizing: border-box; /* ensures padding is included in width */
+    box-sizing: border-box; /* ensures padding is included in width */a
 }
 
 #banner .content p {
@@ -4419,3 +4419,24 @@ html, body {
     word-wrap: break-word;  /* prevents long words from overflowing */
 }
 
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+    #banner .banner-header {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    #banner .banner-text {
+        max-width: 100%;
+    }
+
+    #banner > .inner .content {
+        width: 100%;
+        padding: 0 1em;
+    }
+
+    #banner > .inner .content p {
+        font-size: 1rem;
+    }
+}
