@@ -52,8 +52,9 @@ ol, ul {
 }
 
 .image-row img {
-    height:300px;           /* fixed height */
-    width: auto;             /* scale width to maintain aspect ratio */
+    width: 100%;
+    max-width: 520px;
+    height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
@@ -62,8 +63,9 @@ ol, ul {
 /* Optional: responsive tweak for mobile screens */
 @media screen and (min-width: 1200px) {
     .video-container video {
-        height: 700px;     /* set a bigger height */
-        width: auto;       /* width scales to maintain aspect ratio */
+        width: 100%;
+        height: auto;
+        max-height: 700px;
     }
 }
 #echo-hand {
@@ -3568,16 +3570,37 @@ input, select, textarea {
 		font-family: 'Roboto', sans-serif !important;
 
 	}
+		/* Banner profile image: circle*/
 		#banner .profile-pic {
-		width: clamp(160px, 22vw, 260px);
-		height: clamp(160px, 22vw, 260px);
-		flex-shrink: 0;
+			--profile-size: clamp(160px, 22vw, 260px);
+			width: var(--profile-size) !important;
+			height: var(--profile-size) !important;
+			flex: 0 0 var(--profile-size) !important; /* prevents oval from flexbox */
+			display: block;
+			border-radius: 50% !important;
+			overflow: hidden; /* clips inner image if this is a wrapper */
+			max-width: none;
+			max-height: none;
+			border: 2px solid rgba(255, 255, 255, 0.35);
+			box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+		}
 
-		border-radius: 50%;
-		object-fit: cover;
+		/* If .profile-pic is a wrapper containing an <img>, make the child fill the circle */
+		#banner .profile-pic img {
+			width: 100% !important;
+			height: 100% !important;
+			display: block;
+			border-radius: 50% !important;
+			object-fit: cover;
+			object-position: center;
+		}
 
-		border: 2px solid rgba(255, 255, 255, 0.35);
-		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+		/* If .profile-pic is the <img> itself, force it to fill the circle */
+		#banner img.profile-pic {
+			width: var(--profile-size) !important;
+			height: var(--profile-size) !important;
+			object-fit: cover;
+			object-position: center;
 		}
 
 
@@ -3616,7 +3639,8 @@ input, select, textarea {
 			padding: 0 !important;
 			position: relative;
 			z-index: 2;
-			min-width:100vh;
+			width: 100%;
+			min-width: 0;
 			height: auto;
 		}
 
@@ -3695,8 +3719,8 @@ input, select, textarea {
 				}
 
 		#banner.major {
-			height: 75vh;
 			min-height: 100vh;
+			height: auto;
 		}
 
 			#banner.major.alt {
@@ -3783,35 +3807,38 @@ input, select, textarea {
 				min-height: 0;
 				top: -2.75em;
 			}
-				  #banner .banner-header {
-					flex-direction: column;
-					text-align: center;
-					gap: 1.2em;
-				}
+			#banner .banner-header {
+				flex-direction: column;
+				text-align: center;
+				gap: 1.2em;
+			}
 
-				#banner .banner-text {
-					align-items: center;
-				}
+			#banner .banner-text {
+				align-items: center;
+			}
 
-				#banner h1 {
-					font-size: 2em;
-				}
+			#banner h1 {
+				font-size: 2em;
+			}
 
-				#banner > .inner .content {
-					display: block;
-				}
+			#banner > .inner .content {
+				display: block;
+			}
 
-					#banner > .inner .content > * {
-						margin-right: 0;
-						margin-bottom: 2em;
-					}
+			#banner > .inner .content > * {
+				margin-right: 0;
+				margin-bottom: 2em;
+			}
 
-				#banner.major {
-					height: auto;
-					min-height: 0;
-					max-height: none;
-				}
+			#banner.major {
+				height: auto;
+				min-height: 0;
+				max-height: none;
+			}
 
+			#banner .profile-pic {
+				--profile-size: 170px;
+			}
 		}
 
 		@media screen and (max-width: 480px) {
@@ -3900,35 +3927,26 @@ html {
 			background-color: transparent;
 			border-bottom: solid 1px rgba(212, 212, 255, 0.1);
 		}
-/* Force each spotlight section to a specific height */
-.spotlights section {
-    height: 80vh; /* Adjust as needed; this makes it 80% of viewport height */
-    display: flex; /* ensures content and image can align properly */
-    align-items: stretch; /* stretch children to fill height */
-}
+/* Spotlights: keep the template defaults.*/
 
-/* Responsive full-height image without breaking layout */
 .spotlights .image.full-height {
-    flex: 1 1 50%;
-    min-height: 300px;
     overflow: hidden;
+    min-height: 220px;
 }
 
 .spotlights .image.full-height img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-.spotlights .image.full-height img {
-    height: 100%;
-    width: auto; /* maintains aspect ratio */
-    object-fit: cover;
     object-position: center;
     display: block;
 }
 
-
+@media screen and (max-width: 980px) {
+    .spotlights .image.full-height {
+        min-height: 200px;
+    }
+}
 
   /* 2x2 grid for contact items */
   #contact .contact-grid {
@@ -4221,69 +4239,6 @@ html {
 		}
 
 
-.spotlights > section {
-  align-items: stretch;
-}
-
-.spotlights .image img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-
-/* Ensure text + image scale together */
-.spotlights > section {
-  display: flex;
-  align-items: stretch;
-}
-
-/* Image column */
-.spotlights > section > .image {
-  flex: 1 1 50%;
-}
-
-/* Text column */
-.spotlights > section > .content {
-  flex: 1 1 50%;
-  display: flex;
-}
-
-/* Prevent text overlap */
-.spotlights > section > .content > .inner {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-@media screen and (max-width: 980px) {
-  .spotlights > section {
-    flex-direction: column;
-  }
-
-  .spotlights > section > .image,
-  .spotlights > section > .content {
-    width: 100%;
-  }
-
-  .spotlights > section > .image {
-    min-height: 250px;
-  }
-}
-
-@media screen and (max-width: 980px) {
-  .spotlights > section {
-    flex-direction: column;
-  }
-
-  .spotlights > section > .image,
-  .spotlights > section > .content {
-    width: 100%;
-  }
-
-  .spotlights > section > .image {
-    min-height: 200px;
-  }
-}
 
 /* Ensure no horizontal scrolling */
 html, body {
