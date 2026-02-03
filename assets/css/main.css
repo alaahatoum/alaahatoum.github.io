@@ -52,32 +52,18 @@ ol, ul {
 }
 
 .image-row img {
-    /* Responsive images: scale nicely on any screen */
-    width: 100%;
-    height: auto;
-    max-width: 520px;
+    height:300px;           /* fixed height */
+    width: auto;             /* scale width to maintain aspect ratio */
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    display: block;
-}
-
-/* Let each image take a reasonable amount of row space */
-.image-row > * {
-    flex: 1 1 320px;
-    max-width: 520px;
 }
 
 
 /* Optional: responsive tweak for mobile screens */
-/* Keep video responsive; avoid fixed heights */
 @media screen and (min-width: 1200px) {
-    .video-container {
-        max-width: 1400px;
-    }
     .video-container video {
-        width: 100%;
-        height: auto;
-        max-height: 75vh;
+        height: 700px;     /* set a bigger height */
+        width: auto;       /* width scales to maintain aspect ratio */
     }
 }
 #echo-hand {
@@ -3630,8 +3616,7 @@ input, select, textarea {
 			padding: 0 !important;
 			position: relative;
 			z-index: 2;
-			width: 100%;
-			min-width: 0;
+			min-width:100vh;
 			height: auto;
 		}
 
@@ -3915,59 +3900,35 @@ html {
 			background-color: transparent;
 			border-bottom: solid 1px rgba(212, 212, 255, 0.1);
 		}
-/* Spotlights: fully responsive (no fixed viewport heights) */
-.spotlights > section {
-    display: flex;
-    align-items: stretch;
-    height: auto;
-    min-height: 0;
+/* Force each spotlight section to a specific height */
+.spotlights section {
+    height: 80vh; /* Adjust as needed; this makes it 80% of viewport height */
+    display: flex; /* ensures content and image can align properly */
+    align-items: stretch; /* stretch children to fill height */
 }
 
-/* Image column */
-.spotlights > section > .image {
-    flex: 1 1 45%;
-    width: 45%;
-    min-height: 260px;
+/* Responsive full-height image without breaking layout */
+.spotlights .image.full-height {
+    flex: 1 1 50%;
+    min-height: 300px;
     overflow: hidden;
 }
 
-.spotlights > section > .image img {
+.spotlights .image.full-height img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+}
+
+.spotlights .image.full-height img {
+    height: 100%;
+    width: auto; /* maintains aspect ratio */
     object-fit: cover;
     object-position: center;
     display: block;
 }
 
-/* Text column */
-.spotlights > section > .content {
-    flex: 1 1 55%;
-    width: 55%;
-    display: flex;
-}
 
-.spotlights > section > .content > .inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-}
-
-/* Stack on tablets/phones */
-@media screen and (max-width: 980px) {
-    .spotlights > section {
-        flex-direction: column;
-    }
-
-    .spotlights > section > .image,
-    .spotlights > section > .content {
-        width: 100%;
-    }
-
-    .spotlights > section > .image {
-        min-height: 220px;
-    }
-}
 
   /* 2x2 grid for contact items */
   #contact .contact-grid {
@@ -4326,9 +4287,113 @@ html {
 
 /* Ensure no horizontal scrolling */
 html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Wrapper adjustments */
+#wrapper {
+  padding-top: 3.25em;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden; /* prevent inner content from overflowing */
+}
+
+/* Inner content adjustments */
+#wrapper > * > .inner {
+  padding: 4em 2em; /* use padding instead of calc(100% - X) */
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px; /* optional: prevent very wide text */
+  box-sizing: border-box;
+}
+
+/* Make images inside tiles fully responsive */
+.tiles article .image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Banner text scaling */
+.banner-text, #wrapper .content p {
+  padding: 0 1em; /* prevent text touching the edges */
+  word-wrap: break-word;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+  #wrapper > * > .inner {
+    padding: 3em 1.5em;
+  }
+  .tiles article header.major {
+    text-align: center;
+  }
+  .tiles article .image {
+    margin: 0 auto;
     width: 100%;
-    overflow-x: hidden;
+  }
 }
-img, video {
-    max-width: 100%;
+/* Banner Project Styles */
+.project-banner {
+  position: relative;
+  width: 100%;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.7);
+  padding: 2em;
+  box-sizing: border-box;
 }
+
+.project-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5); /* subtle overlay to make text readable */
+  z-index: 0;
+}
+
+.project-banner .banner-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  width: 90%;
+}
+
+/* Fluid text scaling */
+.project-banner h2 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  margin-bottom: 0.5em;
+}
+
+.project-banner p, 
+.project-banner h4 {
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  line-height: 1.6;
+}
+
+.project-banner ol {
+  margin-left: 1.2em;
+}
+
+/* Button */
+.project-banner .button {
+  margin-top: 1em;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+  .project-banner {
+    min-height: 50vh;
+    padding: 1.5em;
+  }
+}
+
