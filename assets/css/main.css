@@ -3747,7 +3747,29 @@ input, select, textarea {
 
 			#banner {
 				background-attachment: scroll;
+				
 			}
+			#daedalus {
+				background-attachment: scroll;   /* mobile-friendly fallback */
+				background-size: cover;          /* cover the section without repeating */
+				background-position: center top; /* keeps it aligned nicely */
+			}
+			#eeg-headset{
+				background-attachment: scroll;   /* mobile-friendly fallback */
+				background-size: cover;          /* cover the section without repeating */
+				background-position: center top; /* keeps it aligned nicely */
+			}
+			#echo-hand{
+				background-attachment: scroll;   /* mobile-friendly fallback */
+				background-size: cover;          /* cover the section without repeating */
+				background-position: center top; /* keeps it aligned nicely */
+			}
+			#wavegen{
+				background-attachment: scroll;   /* mobile-friendly fallback */
+				background-size: cover;          /* cover the section without repeating */
+				background-position: center top; /* keeps it aligned nicely */
+			}
+		
 
 		}
 
