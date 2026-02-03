@@ -3568,11 +3568,11 @@ input, select, textarea {
 		position: relative;
 		top: -3.25em;
 		font-family: 'Roboto', sans-serif !important;
-
+		--profile-size: clamp(160px, 22vw, 260px);
 	}
 		/* Banner profile image: circle*/
 		#banner .profile-pic {
-			--profile-size: clamp(160px, 22vw, 260px);
+			/* uses the banner-scoped variable */
 			width: var(--profile-size) !important;
 			height: var(--profile-size) !important;
 			flex: 0 0 var(--profile-size) !important; /* prevents oval from flexbox */
@@ -3699,6 +3699,7 @@ input, select, textarea {
 				-ms-align-items: center;
 				align-items: center;
 				margin: 0 0 2em 0;
+				padding-left: calc(var(--profile-size) + clamp(1.75rem, 4vw, 3.25rem));
 			}
 
 				#banner > .inner .content > * {
@@ -3823,6 +3824,7 @@ input, select, textarea {
 
 			#banner > .inner .content {
 				display: block;
+				padding-left: 0;
 			}
 
 			#banner > .inner .content > * {
